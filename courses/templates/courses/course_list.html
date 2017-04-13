@@ -1,0 +1,9 @@
+{% extends 'layout.html' %}
+{% block title %}Available courses{% endblock %}
+
+{% block content %}
+    {% for course in courses %}
+    <a href="{% url 'courses:course_detail' pk=course.pk %}"><h2>{{ course.title }}</h2></a>
+    {{ course.description }}
+    {% endfor %}
+{% endblock %}
